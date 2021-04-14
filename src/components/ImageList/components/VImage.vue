@@ -5,26 +5,31 @@
     @click.exact="$emit('openImage', image)"
     @click.ctrl="toggleImageSelection(image.id)"
   >
+    <img
+      :src="`file:///${image.src}`"
+      width="180px"
+      alt="image"
+    >
     <div class="image-block__image">
-      <v-tooltip
-        bottom
-        light
-        color="blue-grey darken-2"
-      >
-        <template v-slot:activator="{ on }">
-          <img
-            v-on="{ on }"
-            :src="`file:///${image.src}`"
-            width="180px"
-            alt="image"
-          >
-        </template>
-        <div>
-          <span v-text="image.name" /><br>
-          <span v-text="image.modifiedTime" /><br>
-          <span v-text="image.size" />
-        </div>
-      </v-tooltip>
+      <!--      <v-tooltip-->
+      <!--        bottom-->
+      <!--        light-->
+      <!--        color="blue-grey darken-2"-->
+      <!--      >-->
+      <!--        <template v-slot:activator="{ on }">-->
+      <!--          <img-->
+      <!--            v-on="{ on }"-->
+      <!--            :src="`file:///${image.src}`"-->
+      <!--            width="180px"-->
+      <!--            alt="image"-->
+      <!--          >-->
+      <!--        </template>-->
+      <!--        <div>-->
+      <!--          <span v-text="image.name" /><br>-->
+      <!--          <span v-text="image.modifiedTime" /><br>-->
+      <!--          <span v-text="image.size" />-->
+      <!--        </div>-->
+      <!--      </v-tooltip>-->
     </div>
     <div class="image-block__title">
       <span v-text="image.name" />
@@ -33,8 +38,6 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
 export default {
   name: 'VImage',
   props: {
@@ -44,14 +47,14 @@ export default {
     },
   },
   computed: {
-    ...mapState([
-      'selectedImages',
-    ]),
+    // ...mapState([
+    //   'selectedImages',
+    // ]),
   },
   methods: {
-    ...mapActions([
-      'toggleImageSelection',
-    ]),
+    // ...mapActions([
+    //   'toggleImageSelection',
+    // ]),
   },
 };
 </script>

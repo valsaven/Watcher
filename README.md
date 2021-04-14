@@ -1,4 +1,4 @@
-# Watcher
+# Sight
 
 A cross-platform image viewer.
 
@@ -11,29 +11,24 @@ Features:
 npm install
 ```
 
-## Post install
-```
-npm run electron-builder install-app-deps
-```
-
-### Compiles and hot-reloads Electron package for development
-```
-npm run electron:serve
-```
-
-### Compiles and minifies Electron package for production
-```
-npm run electron:build
-```
-
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm start
 ```
 
-### Compiles and minifies for production
+### Pack package
 ```
-npm run build
+npm run package
+```
+
+### Make package
+```
+npm run make
+```
+
+### Lints files
+```
+npm run lint
 ```
 
 ## License
